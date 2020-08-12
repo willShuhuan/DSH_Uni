@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<!-- 父组件声明想要触发的函数： clicknow，在methods中声明-->
+			<button-counter @clicknow='clicknow'>
+				<!-- button-counter 中添加slot ，在使用时可以增加内嵌标签 -->
+				<h1>slot内嵌标签</h1>
+			</button-counter>
+			<button-counter></button-counter>
+			<test/>
+			
+		</div>
+		
+		<script>
+			// 定义一个名为 button-counter 的新组件
+			// 全局注册
+			Vue.component('button-counter', {
+			  data: function () {
+			    return {
+			      count: 0
+			    }
+			  },
+			  template: '<div><button v-on:click="clickFun">You clicked me {{ count }} times.</button><slot></slot></div>',
+			  methods:{
+				  clickFun:function(){
+					  this.count++;
+					  // $emit 触发事件
+					  this.$emit('clicknow',this.count)
+				  }
+			  }
+			})
+			var vm = new Vue({
+				// 元素
+				el: '#app',
+				data: {},
+				methods:{
+					clicknow:function(e){
+						console.log(e)
+					}
+				},
+				// 局部注册的组件
+				components:{
+					test:{
+						template:"<h2 @click='clickme'>h2</h2>",
+						methods:{
+							clickme:function(){
+								alert('HaHaHa');
+							}
+						}
+					}
+				}
+			})
+			
+		</script>
+		<style> 
+		</style>
+	</body>
+</html>

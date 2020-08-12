@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<!-- v-bind:style 的数组语法可以将多个样式对象应用到同一个元素上： -->
+			<div 
+				class="test"
+				v-bind:class="{ active: isActive,green:isGreen }"
+				style="width: 200px;height: 200px;text-align: center;line-height: 200px;">
+				Hi vue
+			</div>
+			
+			<div :style="{color:'#FF0000',fontSize:size}">
+				666
+			</div>
+			
+		</div>
+		
+		<script>
+			
+			var vm = new Vue({
+				// 元素
+			  el: '#app',
+			  data: {
+				  isActive:true,
+				  isGreen:true,
+				  size:'40px'
+			  },
+			  })
+			
+			
+		</script>
+		<style>
+			.active{background: #FF0000;}
+			.green{color: green;}
+			.test{font-size: 40px;}
+		</style>
+	</body>
+</html>

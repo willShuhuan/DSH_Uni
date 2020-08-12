@@ -1,0 +1,94 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		//#ifndef MP-WEIXIN
+		{
+			"path": "pages/main/tab_main_video",
+			"style": {}
+		},
+		{
+		    "path" : "pages/main/tab_main_game",
+		    "style" : {}
+		},
+		//#endif
+		{
+		    "path" : "pages/main/tab_main_mine",
+		    "style" : {
+				"navigationBarTitleText":"vue 组件与api",
+				"navigationStyle":"default"
+			}
+		},
+		{
+		    "path" : "pages/main/tab_main_share",
+		    "style" : {}
+		},
+		{
+		    "path" : "pages/main/tab_main_task",
+		    "style" : {
+		    }
+		}
+		
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "每日赚",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8",
+		"navigationStyle":"custom"
+	},
+	"tabBar" : {
+	    "borderStyle" : "black",
+	    "backgroundColor" : "#FFFFFF",
+	    "color" : "#666666",
+		"height":"50px",
+		"fontSize":"12px",
+		"iconWidth":"26px",
+	    "selectedColor" : "#FF6723",
+	    "list" : 
+		[
+			//#ifndef MP-WEIXIN
+			{
+				"pagePath" : "pages/main/tab_main_video",
+				"iconPath" : "static/mipmap/tabbar/ic_nav_video_unselected.png",
+				"selectedIconPath" : "static/mipmap/tabbar/ic_nav_video_selected.png",
+				"text" : "视频"
+			},
+			{
+				"pagePath" : "pages/main/tab_main_game",
+				"iconPath" : "static/mipmap/tabbar/ic_nav_cart_unselected.png",
+				"selectedIconPath" : "static/mipmap/tabbar/ic_nav_cart_selected.png",
+				"text" : "购物车"
+			},
+			// #endif
+			{
+				"pagePath" : "pages/main/tab_main_share",
+				"iconPath" : "static/mipmap/tabbar/ic_nav_order_unselected.png",
+				"selectedIconPath" : "static/mipmap/tabbar/ic_nav_order_selected.png",
+				"text" : "订单"
+			},
+			{
+				"pagePath" : "pages/main/tab_main_task",
+				"iconPath" : "static/mipmap/tabbar/ic_nav_noti_unselected.png",
+				"selectedIconPath" : "static/mipmap/tabbar/ic_nav_noti_selected.png",
+				"text" : "消息"
+			},
+			{
+				"pagePath" : "pages/main/tab_main_mine",
+				"iconPath" : "static/mipmap/tabbar/ic_nav_mine_unselected.png",
+				"selectedIconPath" : "static/mipmap/tabbar/ic_nav_mine_selected.png",
+				"text" : "我的"
+			}
+			
+		]
+		
+	},
+	"condition" : { //模式配置，仅开发期间生效
+		"current": 0, //当前激活的模式(list 的索引项)
+		"list": [
+			{
+				"name": "", //模式名称
+				"path": "", //启动页面，必选
+				"query": "" //启动参数，在页面的onLoad函数里面得到
+			}
+		]
+	}
+}

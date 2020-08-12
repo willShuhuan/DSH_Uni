@@ -1,0 +1,1 @@
+<view class="_div"><button class="content" type="primary" data-event-opts="{{[['tap',[['showPlugin',['$event']]]]]}}" bindtap="__e">点击加载云端原生插件</button></view>

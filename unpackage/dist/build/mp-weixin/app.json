@@ -1,0 +1,45 @@
+{
+  "pages": [
+    "pages/main/tab_main_mine",
+    "pages/main/tab_main_share",
+    "pages/main/tab_main_task"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "每日赚",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8",
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "borderStyle": "black",
+    "backgroundColor": "#FFFFFF",
+    "color": "#666666",
+    "height": "50px",
+    "fontSize": "10px",
+    "iconWidth": "20px",
+    "selectedColor": "#FF6723",
+    "list": [
+      {
+        "pagePath": "pages/main/tab_main_share",
+        "iconPath": "static/mipmap/tabbar/ic_nav_share_unselected.png",
+        "selectedIconPath": "static/mipmap/tabbar/ic_nav_share_selected.png",
+        "text": "分享赚"
+      },
+      {
+        "pagePath": "pages/main/tab_main_task",
+        "iconPath": "static/mipmap/tabbar/ic_nav_task_unselected.png",
+        "selectedIconPath": "static/mipmap/tabbar/ic_nav_task_selected.png",
+        "text": "任务"
+      },
+      {
+        "pagePath": "pages/main/tab_main_mine",
+        "iconPath": "static/mipmap/tabbar/ic_nav_mine_unselected.png",
+        "selectedIconPath": "static/mipmap/tabbar/ic_nav_mine_selected.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "usingComponents": {}
+}

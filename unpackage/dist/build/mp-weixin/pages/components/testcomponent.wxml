@@ -1,0 +1,1 @@
+<view data-event-opts="{{[['tap',[['clickFun',['$event']]]]]}}" bindtap="__e" class="_h3">{{"我是自定义组件："+msg}}</view>

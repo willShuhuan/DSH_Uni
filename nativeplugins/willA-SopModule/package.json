@@ -1,0 +1,34 @@
+{
+  "name": "willA的安卓网赚插件",
+  "id": "willA-SopModule",
+  "version": "1.0",
+  "description": "willA的安卓插件，测试原生交互",
+  "_dp_type":"nativeplugin",
+  "_dp_nativeplugin":{
+    "android": {
+      "plugins": [
+        {
+          "type": "module",
+          "name": "willA-SopModule",
+          "class": "net.xhmm.opmodule.TestModule"
+        }
+      ],
+      "integrateType": "aar",
+      "dependencies": [
+        "com.android.support:recyclerview-v7:28.0.0",
+        "com.android.support:support-v4:28.0.0",
+        "com.android.support:appcompat-v7:28.0.0",
+        "com.alibaba:fastjson:1.1.46.android"
+      ],
+      "compileOptions": {
+        "sourceCompatibility": "1.8",
+        "targetCompatibility": "1.8"
+      },
+      "minSdkVersion": "19"
+    },
+	"ios":{
+		// 编写ios原生插件配置信息
+	}
+
+  }
+}

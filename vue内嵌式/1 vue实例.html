@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>vue实例</title>
+		<!-- 直接引入方式 -->
+		<!-- <script src="../js/vue.js" type="text/javascript" charset="utf-8"></script> -->
+		<!-- <script src="../js/vue.min.js" type="text/javascript" charset="utf-8"></script> -->
+		
+		<!-- cdn方式 -->
+		<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<!-- 生产环境版本，优化了尺寸和速度 -->
+		<!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+	</head>
+	<body>
+		<div id="app">
+		  {{ message }}
+		</div>
+		<script>
+			var data = {message: 'Hello Vue!'}
+			//应用的对象
+			var app = new Vue({
+				// 元素
+			  el: '#app',
+			  data: data,
+			  
+			  // ------    生命周期方法   start   ------
+			  //在实例初始化之后，数据观测（data observer） 和event/watcher 事件配置之前被调用。
+			  beforeCreate:function(){
+			  	console.log('beforeCreate');
+			  },
+			  // 在实例创建完成后被立即调用。
+			  //在这一步，实例已完成以下的配置：数据观测（data observer）， 属性和方法的运算，watch/ event事件回调
+			  //然而，挂载阶段还没开始，$el属性目前不可见。
+			  created:function(){
+			  	console.log('created');
+				// `this` 指向 vm 实例
+				console.log('message is: ' + this.message)
+			  },
+			  //在挂载开始之前被调用：相关的渲染函数首次被调用
+			  beforeMount:function(){
+			  	console.log('beforeMount');
+			  },
+			  //el被新创建的Vm.$el替换，挂载成功
+			  mounted:function(){
+			  	console.log('mounted');
+			  },
+			  //组件更新时调用
+			  beforeUpdate:function(){
+			  	console.log('beforeUpdate');
+			  },
+			  //组件dom已经更新，组件更新完毕
+			  updated:function(){
+			  	console.log('updated');
+			  },
+			  //实例销毁之前调用，在这一步，实例仍然完全可用
+			  beforeDestroy:function(){
+			  	console.log('beforeDestroy');
+			  },
+			  //Vue实例销毁后调用。调用后，Vue 实例指示的所有东西都会解绑定，
+			  //所有的事件监听器会被移除，所有的子实例也会被销毁。
+			  destroyed:function(){
+			  	console.log('destroyed');
+			  },
+			  // ------    生命周期方法   end   ------
+			  
+			})
+			//数据变化刷新视图，以下两种方式都会刷新页面
+			app.message = "test";
+			data.message = "test2"
+			//$ 符号 取el和data等app内的元素
+			console.log(app.$data===data)//true
+			console.log(app.$el===document.getElementById("app"))//ture
+			// $watch 是一个实例方法 观察变量的变化
+			app.$watch('message', function (newValue, oldValue) {
+			  // 这个回调将在 `app.message` 改变后调用
+			  console.log(newValue,oldValue);
+			})
+			app.message = "test3";
+			
+			
+			
+		</script>
+	</body>
+</html>

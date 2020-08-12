@@ -1,0 +1,1 @@
+.content{padding-top:25px;text-align:center;height:100%}.title{color:#007aff;font-weight:700}.form{padding:20rpx}.button{margin-top:10rpx;width:40%}.scroll-view-item{width:100%;height:200px;text-align:center;line-height:200px}.uni-bg-red{background:red}.uni-bg-green{background:#4cd964}.uni-bg-blue{background:#007aff}
